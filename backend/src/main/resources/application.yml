@@ -1,6 +1,10 @@
 server:
   port: ${SERVER_PORT:8080}
 
+# 巡检日期等业务日期判断口径，一律按服务端此时区计算，不信任客户端时钟
+app:
+  business-zone: ${BUSINESS_ZONE:Asia/Shanghai}
+
 spring:
   application:
     name: aquarium-tank

@@ -27,7 +27,8 @@ CREATE TABLE IF NOT EXISTS maintenance (
     tank_id BIGINT NOT NULL,
     check_date DATE NOT NULL,
     result VARCHAR(16) NOT NULL,
-    note VARCHAR(255)
+    note VARCHAR(255),
+    CONSTRAINT uk_maintenance_tank_date UNIQUE KEY (tank_id, check_date)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT IGNORE INTO tank (id, code, capacity, state) VALUES

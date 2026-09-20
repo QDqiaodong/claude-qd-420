@@ -8,13 +8,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "maintenance")
+@Table(name = "maintenance", uniqueConstraints = {
+        @UniqueConstraint(name = "uk_maintenance_tank_date", columnNames = {"tank_id", "check_date"})
+})
 @Getter
 @Setter
 public class Maintenance {
