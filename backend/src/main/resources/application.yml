@@ -1,6 +1,10 @@
 server:
   port: ${SERVER_PORT:8080}
 
+app:
+  # 巡检/投喂等台账的日期判断一律以该服务端时区的当日为准
+  business-zone: ${BUSINESS_ZONE:Asia/Shanghai}
+
 spring:
   application:
     name: aquarium-tank
